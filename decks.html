@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Decks · Memoria</title>
+
+  <meta name="theme-color" content="#0f0f1a" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <!-- Globale Top-Navigation (fixiert oben). Klasse bleibt bottom-nav laut CSS -->
+  <nav class="bottom-nav">
+    <a href="index.html" >Home</a>
+    <a href="learn.html" >Lernen</a>
+    <a href="decks.html" aria-current="page">Decks</a>
+    <a href="quests.html" >Quests</a>
+    <a href="stats.html" >Stats</a>
+    <a href="pdf.html" >PDF</a>
+    <a href="settings.html" >Einstellungen</a>
+  </nav>
+
+  <div class="container layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div>
+          <div class="app-title">Memoria</div>
+          <div class="subtitle">Behalte, was zählt.</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" >Home</a>
+        <a href="learn.html" >Lernen</a>
+        <a href="decks.html" aria-current="page">Decks</a>
+        <a href="quests.html" >Quests</a>
+        <a href="stats.html" >Statistik</a>
+        <a href="pdf.html" >PDF</a>
+        <a href="settings.html" >Einstellungen</a>
+      </nav>
+
+      <div class="cta">
+        <button class="btn">Install</button>
+        <button class="btn ghost">Login</button>
+      </div>
+
+      <footer class="app-footer">
+        © 2026 Lara Jacqueline Volkmer
+      </footer>
+    </aside>
+
+    <section class="page-content">
+      <div class="learn-header-row">
+        <div>
+          <h1>Decks</h1>
+          <p class="section-sub">
+            Verwalte deine Lern-Decks. Füge Karten hinzu. Exportiere oder importiere.
+          </p>
+        </div>
+      </div>
+      <div class="kard" style="margin-bottom:1rem;">
+        <div class="label">Neues Deck anlegen</div>
+        <div class="row" style="flex-wrap:wrap;gap:.5rem;">
+          <input id="deck-name" class="input" placeholder="Deck-Name" style="max-width:200px;" />
+          <button id="create-deck" class="btn">Deck erstellen</button>
+        </div>
+      </div>
+
+      <div class="kard" style="margin-bottom:1rem;">
+        <div class="label">Import / Export</div>
+        <div class="row" style="flex-wrap:wrap;gap:.5rem;">
+          <input id="import-file" type="file" class="input" style="max-width:200px;" />
+          <button id="import-deck" class="btn ghost">Importieren</button>
+          <button id="export-deck" class="btn ghost">Exportieren</button>
+        </div>
+      </div>
+
+      <div class="kard" style="margin-bottom:1rem;">
+        <div class="label">Deine Decks</div>
+        <div id="deck-list" class="section-sub">Noch keine Decks...</div>
+      </div>
+    </section>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

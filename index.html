@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard · Memoria</title>
+
+  <meta name="theme-color" content="#0f0f1a" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <!-- Globale Top-Navigation (fixiert oben). Klasse bleibt bottom-nav laut CSS -->
+  <nav class="bottom-nav">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="learn.html" >Lernen</a>
+    <a href="decks.html" >Decks</a>
+    <a href="quests.html" >Quests</a>
+    <a href="stats.html" >Stats</a>
+    <a href="pdf.html" >PDF</a>
+    <a href="settings.html" >Einstellungen</a>
+  </nav>
+
+  <div class="container layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div>
+          <div class="app-title">Memoria</div>
+          <div class="subtitle">Memorise All.</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="learn.html" >Lernen</a>
+        <a href="decks.html" >Decks</a>
+        <a href="quests.html" >Quests</a>
+        <a href="stats.html" >Statistik</a>
+        <a href="pdf.html" >PDF</a>
+        <a href="settings.html" >Einstellungen</a>
+      </nav>
+
+      <div class="cta">
+        <button class="btn">Install</button>
+        <button class="btn ghost">Login</button>
+      </div>
+
+      <footer class="app-footer">
+        © 2026 Lara Jacqueline Volkmer
+      </footer>
+    </aside>
+
+    <section class="page-content">
+      <div class="learn-header-row">
+        <div>
+          <h2>Welcome back my friend! Enjoy your Memorise Boost with Me: Memoria</h2>
+          <p class="section-sub">
+            Starte deine Lernquest und/oder mache weiter wo du aufgehört hast. 
+            Oder füge neue Lerndecks, Lernquests, Vokabeln oder PDFs hinzu zum Vorlesen,    lernen u.v.m.
+          </p>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Heute</h3>
+          <p class="section-sub"><span id="due-cards-badge">0 Karten bereit</span></p>
+          <div class="row" style="flex-wrap:wrap;gap:.5rem;">
+            <button class="btn" onclick="location.href='learn.html'">Blitzrunde start</button>
+            <button class="btn ghost" onclick="location.href='decks.html'">Neues Deck</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Tip des Tages</h3>
+          <p id="tip-of-day" class="section-sub">
+            Lade...
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

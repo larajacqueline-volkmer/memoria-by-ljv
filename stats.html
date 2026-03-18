@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Statistik · Memoria</title>
+
+  <meta name="theme-color" content="#0f0f1a" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <!-- Globale Top-Navigation (fixiert oben). Klasse bleibt bottom-nav laut CSS -->
+  <nav class="bottom-nav">
+    <a href="index.html" >Home</a>
+    <a href="learn.html" >Lernen</a>
+    <a href="decks.html" >Decks</a>
+    <a href="quests.html" >Quests</a>
+    <a href="stats.html" aria-current="page">Stats</a>
+    <a href="pdf.html" >PDF</a>
+    <a href="settings.html" >Einstellungen</a>
+  </nav>
+
+  <div class="container layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div>
+          <div class="app-title">Memoria</div>
+          <div class="subtitle">Behalte, was zählt.</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" >Home</a>
+        <a href="learn.html" >Lernen</a>
+        <a href="decks.html" >Decks</a>
+        <a href="quests.html" >Quests</a>
+        <a href="stats.html" aria-current="page">Statistik</a>
+        <a href="pdf.html" >PDF</a>
+        <a href="settings.html" >Einstellungen</a>
+      </nav>
+
+      <div class="cta">
+        <button class="btn">Install</button>
+        <button class="btn ghost">Login</button>
+      </div>
+
+      <footer class="app-footer">
+        © 2026 Lara Jacqueline Volkmer
+      </footer>
+    </aside>
+
+    <section class="page-content">
+      <div class="learn-header-row">
+        <div>
+          <h1>Statistik</h1>
+          <p class="section-sub">
+            Überblick über deine Lernleistung.
+          </p>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h2>Gesamt-XP</h2>
+          <p class="section-sub"><span id="stat-xp">0</span> XP</p>
+        </div>
+
+        <div class="card">
+          <h2>Heute gelernte Karten</h2>
+          <p class="section-sub"><span id="stat-today-cards">0</span> Karten</p>
+        </div>
+
+        <div class="card">
+          <h2>Fokus-Zeit heute</h2>
+          <p class="section-sub"><span id="stat-total-time">0 min</span></p>
+        </div>
+      </div>
+
+      <div class="kard" style="margin-bottom:1rem;">
+        <div class="label">Sessions der letzten Tage</div>
+        <canvas id="chart-sessions" width="400" height="160" style="background:#000;border-radius:8px;border:1px solid rgba(255,255,255,0.1);"></canvas>
+      </div>
+    </section>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

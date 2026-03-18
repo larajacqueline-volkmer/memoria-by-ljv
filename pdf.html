@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PDF · Memoria</title>
+
+  <meta name="theme-color" content="#0f0f1a" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <!-- Globale Top-Navigation (fixiert oben). Klasse bleibt bottom-nav laut CSS -->
+  <nav class="bottom-nav">
+    <a href="index.html" >Home</a>
+    <a href="learn.html" >Lernen</a>
+    <a href="decks.html" >Decks</a>
+    <a href="quests.html" >Quests</a>
+    <a href="stats.html" >Stats</a>
+    <a href="pdf.html" aria-current="page">PDF</a>
+    <a href="settings.html" >Einstellungen</a>
+  </nav>
+
+  <div class="container layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div>
+          <div class="app-title">Memoria</div>
+          <div class="subtitle">Behalte, was zählt.</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" >Home</a>
+        <a href="learn.html" >Lernen</a>
+        <a href="decks.html" >Decks</a>
+        <a href="quests.html" >Quests</a>
+        <a href="stats.html" >Statistik</a>
+        <a href="pdf.html" aria-current="page">PDF</a>
+        <a href="settings.html" >Einstellungen</a>
+      </nav>
+
+      <div class="cta">
+        <button class="btn">Install</button>
+        <button class="btn ghost">Login</button>
+      </div>
+
+      <footer class="app-footer">
+        © 2026 Lara Jacqueline Volkmer
+      </footer>
+    </aside>
+
+    <section class="page-content">
+      <div class="learn-header-row">
+        <div>
+          <h1>PDF</h1>
+          <p class="section-sub">
+            Lies, markiere, höre vor, extrahiere Inhalte, fasse zusammen.
+          </p>
+        </div>
+      </div>
+      <div class="kard" style="margin-bottom:1rem;">
+        <div class="label">Aktionen</div>
+        <div class="row" style="flex-wrap:wrap;gap:.5rem;">
+          <button id="pdf-open" class="btn">Öffnen</button>
+          <button id="pdf-clear" class="btn ghost">Schließen</button>
+
+          <button id="pdf-prev" class="btn ghost">← Seite</button>
+          <button id="pdf-next" class="btn ghost">Seite →</button>
+
+          <button id="pdf-zoom-out" class="btn ghost">−</button>
+          <button id="pdf-zoom-in" class="btn ghost">+</button>
+
+          <input id="pdf-search" class="input" placeholder="Suche..." style="max-width:120px;" />
+          <button id="pdf-find" class="btn ghost">Suche</button>
+          <button id="pdf-clear-search" class="btn ghost">X</button>
+
+          <input id="pdf-jump" class="input" placeholder="Seite #" style="max-width:80px;" />
+          <button id="pdf-go" class="btn ghost">Gehe</button>
+
+          <button id="pdf-summarize" class="btn">Zusammenfassen</button>
+          <button id="pdf-bullets" class="btn ghost">Bullet Points</button>
+
+          <button id="pdf-tts" class="btn ghost">Vorlesen</button>
+          <button id="pdf-ocr" class="btn ghost">OCR</button>
+
+          <button id="pdf-export-page" class="btn ghost">Export Seite</button>
+          <button id="pdf-export-doc" class="btn ghost">Export Doku</button>
+          <button id="pdf-export-highlights" class="btn ghost">Highlights</button>
+        </div>
+      </div>
+      <div class="pdf-shell">
+        <div class="pdf-thumbs">
+          <div class="section-sub">Seiten</div>
+          <!-- Thumbnails per Seite kommen später dynamisch -->
+        </div>
+
+        <div class="pdf-view">
+          <canvas class="pdf-canvas"></canvas>
+          <div class="text-layer"></div>
+          <div class="highlight-layer"></div>
+        </div>
+
+        <div class="pdf-bookmarks">
+          <div class="kard" style="min-width:200px;">
+            <div class="label">Zusammenfassung</div>
+            <div id="pdf-summary">(leer)</div>
+          </div>
+
+          <div class="kard" style="min-width:200px;">
+            <div class="label">Stichpunkte</div>
+            <div id="pdf-extract">(leer)</div>
+          </div>
+
+          <div class="kard" style="min-width:200px;">
+            <div class="label">Lesezeichen / Notizen</div>
+            <div id="pdf-bookmarks" class="section-sub">(keine)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
